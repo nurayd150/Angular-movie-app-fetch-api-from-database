@@ -1,0 +1,33 @@
+.container{
+    flex-wrap: wrap;
+}
+.images{
+    /* margin-inline-start: 50px; */
+    margin-left:30px;
+    border:10px;
+    margin-top: 30px;
+    filter: contrast(100%)
+}
+.images:hover{
+    transform: scale(1.1);
+    box-shadow: 20px 20px 5px rgb(109, 5, 5);
+    filter: contrast(250%);
+}
+.imagetext{
+    visibility: hidden; 
+    margin-left: 300px;
+    position:absolute;
+    overflow-wrap: anywhere;
+}
+.images:hover +imagetext{
+    visibility: visible;
+    transform: scale(1.5);
+    padding: 100px;
+}
+.row{
+    position: relative;
+    justify-content: space-between;
+}
+.btnSearch{
+    background-color: blue;
+}

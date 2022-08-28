@@ -1,0 +1,21 @@
+<ul>
+    <li>
+        <a routerLink="/test">Test</a>
+    </li>
+    <li>
+        <a routerLink="/about">About</a>
+    </li>
+</ul>
+<div [ngClass]="'class1 class2 '" [ngStyle]="{'font-size':'100px '}"></div>
+<ul>
+    <li *ngFor="let isim of isimler " appHighlight ><!--yeni bir direktif oluşturdum
+    ve bu direktif ile yapmak istediğim olayı highlight.ts dosyasında verdim burada 
+    da bunu liste elemeanlarına uyguladım-->
+        {{isim}}
+        <!-- <strong *ngIf="isim=='Ali'">{{isim}}</strong> -->
+        <!-- eğer döngüye bir koşul eklemek istersem ngIf kullanılır -->
+    </li>
+    <li>
+        
+    </li>
+</ul>

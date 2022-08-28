@@ -1,0 +1,60 @@
+<div [ngClass]="'container'">
+  <h1 [ngStyle]="{'color':'red','margin-left':'100px'}">FİLM İZLE</h1>
+  <div [ngStyle]="{'margin':'auto'}">
+    <input
+      type="text"
+      (keyup)="getUsers($event)"
+      [ngStyle]="{
+        'margin-bottom': '40px',
+        width: '700px',
+        'margin-left':'100px',
+        'margin-right': '5px',
+        height: '50px',
+        'border-radius': '10px'
+      }"
+      placeholder="Ne izlemek istersiniz?"
+    />
+    <!-- <button
+      type="button"
+      
+      icon="pi pi-check"
+      iconPos="left"
+      [ngStyle]="{
+        'border-radius': '10px',
+        height: '50px',
+        'background-color': 'red'
+      }"
+    >
+      display movie
+    </button> -->
+  </div>
+
+  <div
+    [ngClass]="'row'"
+    *ngFor="let user of movies"
+    [ngStyle]="{ display: 'inline-block' }"
+    id="mydiv"
+  >
+    <img
+      (click)="route()"
+      [ngClass]="'images'"
+      [ngStyle]="{
+        width: '300px',
+        height: '500px',
+        'margin-bottom': '100px',
+        'margin-left': '100px'
+      }"
+      *ngIf="user.primaryImage !== null"
+      src="{{ user.primaryImage.url }}"
+    />
+    <input
+      type="text"
+      [ngClass]="'imagetext'"
+      [ngStyle]="{ width: '300px', height: '100px' }"
+      value="{{ user.titleText.text }}"
+    />
+  </div>
+  <div *ngIf="moviesIsDone" [ngStyle]="{'color':'white','font-size':'100px','text-align':'center','font':'bold'}">
+    Filmler bitti
+  </div>
+</div>
